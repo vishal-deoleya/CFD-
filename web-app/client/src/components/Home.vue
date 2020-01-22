@@ -1,40 +1,111 @@
 <template>
   <div class="posts">
     <h1>2020 Presidential Election</h1>
-    <h3>If you are a registered voter, enter your voterId below</h3>
+    <!-- <h3>If you are a registered voter, enter your voterId below</h3> -->
     <!--span><b>{{ response }}</b></span><br /-->
-    <form v-on:submit="validateVoter">
-      <input type="text" v-model="loginData.voterId" placeholder="Enter VoterId">
-      <br>
 
-      <input type="submit" value="Login">
-      <br>
-      <br>
-      <span v-if="loginReponse">
-        <b>{{ loginReponse.data }}</b>
-      </span>
-      <br>
-    </form>
+    <div class="limiter">
+      <div id="right">
+      <div class="container-login100">
+        <div class="wrap-login100">
 
-    <br>
-    <h3>Otherwise, fill out the form below to register!</h3>
-    <form v-on:submit="registerVoter">
-      <input type="text" v-model="registerData.voterId" placeholder="Enter Drivers License">
-      <br>
-      <input type="text" v-model="registerData.registrarId" placeholder="Enter Registrar ID">
-      <br>
-      <input type="text" v-model="registerData.firstName" placeholder="Enter first name">
-      <br>
-      <input type="text" v-model="registerData.lastName" placeholder="Enter last name">
-      <br>
-      <input type="submit" value="Register">
-    </form>
+          <form v-on:submit="validateVoter" class="login100-form validate-form">
+          
+            <span class="login100-form-title p-b-26">
+                Enter Voter Id 
+            </span>
+            
+            <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+              <input class="input100" type="text" v-model="loginData.voterId" name="voterId">
+              <span class="focus-input100" data-placeholder="Voter Id"></span>
+            </div>
+
+            
+            <div class="container-login100-form-btn">
+              <div class="wrap-login100-form-btn">
+                <div class="login100-form-bgbtn"></div>
+                <button type="submit" class="login100-form-btn">
+                  Login
+                </button>
+              </div>
+            </div>
+
+
+            <span v-if="loginReponse">
+              <b>{{ loginReponse.data }}</b>
+            </span>
+            <br>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="vl"></div>
+
+    <div id="left">
+
+    <h3 style="
+    font-size: 2.5em;
+">Sign Up Now</h3>
+
+
+    <div class="container-login100">
+      <form v-on:submit="registerVoter">
+
+        <div class="wrap-input100 validate-input">
+          <input class="input100" type="text" v-model="registerData.voterId" >
+          <span class="focus-input100" data-placeholder="Aadhar Number"></span>
+        </div>
+
+        <br>
+
+        <div class="wrap-input100 validate-input">
+          <input class="input100" type="text" v-model="registerData.registrarId" >
+          <span class="focus-input100" data-placeholder="Registrar Id"></span>
+        </div>
+
+        <br>
+
+        <div class="wrap-input100 validate-input">
+          <input class="input100" type="text" v-model="registerData.firstName">
+          <span class="focus-input100" data-placeholder="First Name"></span>
+        </div>
+
+        <br>
+
+        <div class="wrap-input100 validate-input" >
+          <input class="input100" type="text" v-model="registerData.lastName" >
+          <span class="focus-input100" data-placeholder="Last Name"></span>
+        </div>
+
+
+        <!-- <input type="text" v-model="registerData.voterId" placeholder="Enter Aadhar Number"> -->
+        
+        <!-- <input type="text" v-model="registerData.registrarId" placeholder="Enter Registrar ID"> -->
+        <!-- <br> -->
+        <!-- <input type="text" v-model="registerData.firstName" placeholder="Enter first name"> -->
+        <!-- <br> -->
+        <!-- <input type="text" v-model="registerData.lastName" placeholder="Enter last name"> -->
+        <!-- <br> -->
+
+        <div class="container-login100-form-btn">
+          <div class="wrap-login100-form-btn">
+            <div class="login100-form-bgbtn"></div>
+            <button type="submit" class="login100-form-btn" value="Register">
+              Register
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    </div>
     <br>
     <span v-if="registerReponse">
       <b>{{ registerReponse.data }}</b>
     </span>
     <br>
     <vue-instant-loading-spinner id='loader' ref="Spinner"></vue-instant-loading-spinner>
+    </div>
   </div>
 </template>
 
@@ -113,3 +184,4 @@ export default {
   }
 };
 </script>
+
