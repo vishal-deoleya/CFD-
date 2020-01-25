@@ -154,6 +154,53 @@ Copyright (c) 2015 Daniel Eden
 @keyframes fadeOut {
   from {
     opacity: 1;
+  }/* The actual popup */
+  
+  .popupForm {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: fixed;
+    z-index: 1;
+
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popup .popupForm::after {
+    content: "";
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+    
+  }
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .showForm {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
   }
 
   to {
@@ -6013,6 +6060,39 @@ Created using IcoMoon - icomoon.io
     transition-timing-function: cubic-bezier(0.685, 0.0473, 0.346, 1);
     -webkit-overflow-scrolling: touch;
   }
+
+
+  
+  
+}
+
+.popupForm
+{
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  margin-left: 30%;
+}
+
+.showForm
+{
+  visibility: visible;
+  backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: 10px 10px 5px grey;
+
+
+}
+
+#close-btn {
+  position: absolute;
+  width: 20px;
+  height: 18px;
+  top: 1%;
+  right: 2%;
+  cursor: pointer;
+  z-index:220;
+  image: url('../../assets/img/close.png');
+  background-repeat: no-repeat;
 }
 
 /*# sourceMappingURL=dashboard-free.css.map */
