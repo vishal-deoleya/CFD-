@@ -4250,8 +4250,8 @@ Created using IcoMoon - icomoon.io
 }
 
 .panel-header {
-  height: 60px;
-  padding-top: 80px;
+  height: 25px;
+  padding-top: 25px;
   padding-bottom: 45px;
   background: #141E30;
   /* fallback for old browsers */
@@ -4277,7 +4277,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .panel-header-sm {
-  height: 135px;
+  height: 65px;
 }
 
 .panel-header-lg {
@@ -6095,4 +6095,11 @@ Created using IcoMoon - icomoon.io
   background-repeat: no-repeat;
 }
 
+.timer {
+  font-size: 2.5em;
+  padding: 5px;
+  /* text-align: center; */
+  margin: 0 auto;
+  background: #ccc;
+}
 /*# sourceMappingURL=dashboard-free.css.map */
