@@ -188,7 +188,7 @@
               <div id="close-btn"><img src="../assets/img/close.png" onclick="editVoterable(1)"></div>
             </div>
             <div class="card-body">
-              <form>
+              <form onsubmit="nowuiDashboard.showNotification('top','left')">
                 <img src="../assets/img/default-avatar-edit.jpg">
                 <div class="row">
                   <div class="col-md-5 pr-1">
@@ -205,6 +205,8 @@
                     </div>
                   </div>
                   
+                  
+
                 </div>
                 <div class="row">
                   <div class="col-md-6 pr-1">
@@ -237,7 +239,7 @@
                   </div>
                   <div class="col-md-4 px-1">
                     <div class="form-group">
-                      <label>Criminal Cases Pending</label>
+                      <label>Past Achievements</label>
                       <input type="text" class="form-control" placeholder="Country" value="Andrew">
                     </div>
                   </div>
@@ -261,10 +263,12 @@
                     </div>
                   </div>
                 </div>
-                <input type="submit" value="Update" class="btn btn-primary" style="margin-left: 30%; margin-right: 6%;">
-                <button  value="Cancel" class="btn btn-primary" style="margin-right: 30%;">Cancel</button>
-
+                
+               
+                
               </form>
+              <button  value="Cancel" class="btn btn-primary" onclick="updated()" >Update</button>
+              <button  value="Cancel" class="btn btn-primary" onclick=" editVoterable()" >Cancel</button>
             </div>
           </div>
         </div>
@@ -336,6 +340,8 @@
       </footer>
     </div>
   </div>
+
+
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
@@ -350,10 +356,10 @@
   <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
   <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initGoogleMaps();
-    });
+    function updated()
+    {
+      nowuiDashboard.showNotification('top','left');
+    }
   </script>
 </body>
 
