@@ -242,7 +242,7 @@
                         </td>
                         <td class="text-left">Number of Voters Registered</td>
                         <td class="td-actions text-right">
-                          <input type="text" value="30" disabled>
+                          <input type="text" value="30000" disabled>
                         </td>
                       </tr>
                       <tr>
@@ -315,10 +315,19 @@ function drawChart() {
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options = {'width':550, 'height':400};
+  var options = {
+    'width':550, 'height':400,
+    animation:{
+      startup:true,
+      duration:1000,
+      easing:'linear'
+    }};
 
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  
+
+  // animation: {"startup": true}
   chart.draw(data, options);
 
 
@@ -332,13 +341,22 @@ function drawChart() {
           ['6 pm',  120000]
         ]);
 
+        
+
         var ongoingoptions = {
           // title: 'Voters Turnout',
           curveType: 'function',
-          legend: { position: 'bottom' }
+          legend: { position: 'bottom' },
+          animation:{
+          startup:true,
+          duration:3000,
+          easing:'out'
+        }
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(ongoingdata, ongoingoptions);
 
         chart.draw(ongoingdata, ongoingoptions);
 
